@@ -95,12 +95,17 @@ header {
   margin: auto;
   gap: 0;
 }
+.holeOrder{
+  display: none;
+  flex-direction: column;
+}
 .container {
   display: flex;
   gap: 30px;
   padding: 20px 50px;
   /* max-width: 1300px; */
-  margin: auto;
+  /* margin: auto; */
+
 }
 
 /* Navbar */
@@ -141,6 +146,19 @@ header {
 .item-details {
   display: flex;
   gap: 15px;
+}
+.cart-actions {
+  /* width: 100px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  position: absolute;
+  top: 200px;
+  left: 330px;
+
+}
+.cart-actions button{
+  width: 130px;
 }
 .item-img {
   width: 80px;
@@ -332,4 +350,100 @@ footer {
   border: none;
   background-color: rgb(240, 243, 245);
   font-size: 18px;
+}
+/* animation */
+.product-card{
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover{
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0px 15px 30px rgba(0,0,0,0.15);
+}
+.product-card img{
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover img{
+  transform: scale(1.1);
+}
+.product-card button{
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.product-card button:hover{
+  background: #0d6efd;
+  color: white;
+  transform: scale(1.05);
+}
+.cart-item{
+  transition: 0.3s ease;
+}
+
+.cart-item:hover{
+  background: #f1f3f5;
+  transform: scale(1.01);
+  border-radius: 6px;
+}
+.btn-remove{
+  transition: 0.3s;
+}
+
+.btn-remove:hover{
+  background-color: #fa3434;
+  color: white;
+  transform: scale(1.05);
+}
+.checkout-btn{
+  transition: all 0.3s ease;
+}
+
+.checkout-btn:hover{
+  background: #009e13;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,181,23,0.3);
+}
+
+.checkout-btn:active{
+  transform: scale(0.95);
+}
+.header-icons img{
+  transition: 0.3s ease;
+}
+
+.header-icons img:hover{
+  transform: scale(1.2) rotate(5deg);
+}
+.product-card{
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp{
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.ul li a{
+  position: relative;
+}
+
+.ul li a::after{
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: blue;
+  transition: 0.3s;
+}
+
+.ul li a:hover::after{
+  width: 100%;
 }

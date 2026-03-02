@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="detail.css">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="product.css">
   </head>
   <body>
     <header>
@@ -19,7 +22,7 @@
       <div class="header-icons">
         <img src="icons/Cart.png" alt="" />
         <img src="icons/Message.png" alt="" />
-        <img src="icons/Orders.png" alt="" />
+        <a href="cart.html"><img src="icons/Orders.png" alt="" /></a>
         <img src="icons/Profile.png" alt="" />
       </div>
     </header>
@@ -30,7 +33,7 @@
         <li><a href="">Hot offers</a></li>
         <li><a href="">Gift boxes</a></li>
         <li><a href="">Projects</a></li>
-        <li><a href="">Menu item</a></li>
+        <li><a href="product.html">Menu item</a></li>
         <li><a href="">Help</a></li>
       </ul>
       <div class="language">
@@ -61,6 +64,17 @@
         <h1>Electronic items</h1>
         <button>Learn more</button>
       </div>
+      
+    <div class="slider-container">
+    <div class="slider-wrapper" id="sliderWrapper">
+        <div class="slide"><img src="cart-image/sidebar-1.jpg" alt="Slide 1"></div>
+        <div class="slide"><img src="cart-image/sidebar-1.jpg" alt="Slide 2"></div>
+        <div class="slide"><img src="cart-image/sidebar-1.jpg" alt="Slide 3"></div>
+    </div>
+    
+    <button class="nav-btn prev" id="prevBtn">&#10094;</button>
+    <button class="nav-btn next" id="nextBtn">&#10095;</button>
+</div>
       <div class="right">
         <div class="card-1">
           <div class="profile">
@@ -154,7 +168,7 @@
           </div>
         </div>
         <div class="homeBox">
-          <h2>Soft chairs</h2>
+          <h2>Lamp</h2>
           <div>
             <p>
               From <br />

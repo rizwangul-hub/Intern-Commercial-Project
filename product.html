@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-        <link rel="stylesheet" href="product.css" />
-
+    <link rel="stylesheet" href="product.css" />
+    <link rel="stylesheet" href="detail.css" />
+    <link rel="stylesheet" href="cart.css" />
+    <script async src="script.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -19,20 +21,26 @@
         <button>Search</button>
       </div>
       <div class="header-icons">
-        <img src="icons/Cart.png" alt="" />
+        <a href="index.html"><img src="icons/Profile.png" alt="" /></a>
         <img src="icons/Message.png" alt="" />
-        <img src="icons/Orders.png" alt="" />
-        <img src="icons/Profile.png" alt="" />
+        <img src="icons/Orders.png" alt="" onclick="order()" />
+        <div class="tool-item cart-btn">
+          <b
+            ><img src="icons/Cart.png" alt="" /> (<span id="cart-count-nav"
+              >0</span
+            >)</b
+          >
+        </div>
       </div>
     </header>
 
     <div class="nav">
       <ul class="ul">
         <li><img src="icons/menu.png" alt="" /><a href="">All category</a></li>
-        <li><a href="">Hot offers</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="">Gift boxes</a></li>
         <li><a href="">Projects</a></li>
-        <li><a href="">Menu item</a></li>
+        <li><a href="product.html">Menu item</a></li>
         <li><a href="">Help</a></li>
       </ul>
       <div class="language">
@@ -44,171 +52,1052 @@
         </select>
       </div>
     </div>
-    
+
     <div class="ProductWithName">
-  <div class="productName">
-    
-    <div class="filter-group">
-      <div class="filter-header">
-        <h3>Category</h3>
-        <span class="arrow-up"></span>
-      </div>
-      <ul class="filter-list">
-        <li>Mobile accessory</li>
-        <li>Electronics</li>
-        <li>Smartphones</li>
-        <li>Modern tech</li>
-        <li class="see-all">See all</li>
-      </ul>
-    </div>
-
-    <hr>
-
-    <div class="filter-group">
-      <div class="filter-header">
-        <h3>Brands</h3>
-        <span class="arrow-up"></span>
-      </div>
-      <ul class="filter-list">
-        <li><input type="checkbox"> Samsung</li>
-        <li><input type="checkbox"> Apple</li>
-        <li><input type="checkbox"> Huawei</li>
-        <li><input type="checkbox"> Pocco</li>
-        <li><input type="checkbox"> Lenovo</li>
-        <li class="see-all">See all</li>
-      </ul>
-    </div>
-
-    <hr>
-
-    <div class="filter-group">
-      <div class="filter-header">
-        <h3>Price range</h3>
-      </div>
-      <div class="price-inputs">
-        <div class="input-box">
-          <label>Min</label>
-          <input type="number" placeholder="0">
+      <div class="productName">
+        <div class="filter-group">
+          <div class="filter-header">
+            <h3>Category</h3>
+            <span class="arrow-up"></span>
+          </div>
+          <ul class="filter-list">
+            <li>Mobile accessory</li>
+            <li>Electronics</li>
+            <li>Smartphones</li>
+            <li>Modern tech</li>
+            <li class="see-all">See all</li>
+          </ul>
         </div>
-        <div class="input-box">
-          <label>Max</label>
-          <input type="number" placeholder="999999">
+
+        <hr />
+
+        <div class="filter-group">
+          <div class="filter-header">
+            <h3>Brands</h3>
+            <span class="arrow-up"></span>
+          </div>
+          <ul class="filter-list">
+            <li><input type="checkbox" /> Samsung</li>
+            <li><input type="checkbox" /> Apple</li>
+            <li><input type="checkbox" /> Huawei</li>
+            <li><input type="checkbox" /> Pocco</li>
+            <li><input type="checkbox" /> Lenovo</li>
+            <li class="see-all">See all</li>
+          </ul>
+        </div>
+
+        <hr />
+
+        <div class="filter-group">
+          <div class="filter-header">
+            <h3>Price range</h3>
+          </div>
+          <div class="price-inputs">
+            <div class="input-box">
+              <label>Min</label>
+              <input type="number" placeholder="0" />
+            </div>
+            <div class="input-box">
+              <label>Max</label>
+              <input type="number" placeholder="999999" />
+            </div>
+          </div>
+          <button class="apply-btn">Apply</button>
+        </div>
+
+        <hr />
+
+        <div class="filter-group">
+          <div class="filter-header">
+            <h3>Condition</h3>
+          </div>
+          <ul class="filter-list">
+            <li><input type="radio" name="condition" checked /> Any</li>
+            <li><input type="radio" name="condition" /> Refurbished</li>
+            <li><input type="radio" name="condition" /> Brand new</li>
+            <li><input type="radio" name="condition" /> Old items</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ratings</h4>
+          <img src="product-image/image/Group 997.png" alt="" />
         </div>
       </div>
-      <button class="apply-btn">Apply</button>
-    </div>
 
-    <hr>
-
-    <div class="filter-group">
-      <div class="filter-header">
-        <h3>Condition</h3>
+      <div class="proNav">
+        <nav>
+          <p>12,911 items in Mobile accessory</p>
+          <div class="input">
+            <div><input type="checkbox" /><span>Verified only</span></div>
+            <select name="" id="">
+              <option value="">Featured</option>
+            </select>
+            <div>
+              <img
+                src="product-image/image/btn-group.png"
+                alt=""
+                onclick="show1()"
+              />
+              <img
+                src="product-image/image/btn-group copy.png"
+                alt=""
+                onclick="show2()"
+              />
+            </div>
+          </div>
+        </nav>
+        <div class="Both">
+          <div class="productCard">
+            <div class="products">
+              <img
+                src="product-image/image/image 33.png"
+                alt=""
+                class="proImg"
+              />
+              <div class="productDetails">
+                <h4>Canon Cmera EOS 2000, Black 10x zoom</h4>
+                <h2>
+                  $998.00
+                  <span style="color: #8b96a5; font-size: 16px"
+                    ><del>$1128.00</del></span
+                  >
+                </h2>
+                <img
+                  src="product-image/image/Group 989.png"
+                  alt=""
+                  class="star"
+                />
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                </p>
+                <h3 onclick="view('product-image/image/image 33.png')">
+                  View details
+                </h3>
+              </div>
+              <img
+                class="heart"
+                onclick="heart(0)"
+                src="product-image/icons/btn-basic.png"
+                alt=""
+              />
+            </div>
+            <div class="products">
+              <img
+                src="product-image/image/image 32.png"
+                class="proImg"
+                alt=""
+              />
+              <div class="productDetails">
+                <h4>Canon Cmera EOS 2000, Black 10x zoom</h4>
+                <h2>
+                  $998.00
+                  <span style="color: #8b96a5; font-size: 16px"
+                    ><del>$1128.00</del></span
+                  >
+                </h2>
+                <img
+                  src="product-image/image/Group 989.png"
+                  alt=""
+                  class="star"
+                />
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                </p>
+                <h3 onclick="view('product-image/image/image 32.png')">
+                  View details
+                </h3>
+              </div>
+              <img
+                class="heart"
+                onclick="heart(1)"
+                src="product-image/icons/btn-basic.png"
+                alt=""
+              />
+            </div>
+            <div class="products">
+              <img
+                src="product-image/image/image 34.png"
+                class="proImg"
+                alt=""
+              />
+              <div class="productDetails">
+                <h4>Canon Cmera EOS 2000, Black 10x zoom</h4>
+                <h2>
+                  $998.00
+                  <span style="color: #8b96a5; font-size: 16px"
+                    ><del>$1128.00</del></span
+                  >
+                </h2>
+                <img
+                  src="product-image/image/Group 989.png"
+                  alt=""
+                  class="star"
+                />
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                </p>
+                <h3 onclick="view('product-image/image/image 34.png')">
+                  View details
+                </h3>
+              </div>
+              <img
+                class="heart"
+                onclick="heart(2)"
+                src="product-image/icons/btn-basic.png"
+                alt=""
+              />
+            </div>
+            <div class="products">
+              <img
+                src="product-image/image/image 35.png"
+                class="proImg"
+                alt=""
+              />
+              <div class="productDetails">
+                <h4>Canon Cmera EOS 2000, Black 10x zoom</h4>
+                <h2>
+                  $998.00
+                  <span style="color: #8b96a5; font-size: 16px"
+                    ><del>$1128.00</del></span
+                  >
+                </h2>
+                <img
+                  src="product-image/image/Group 989.png"
+                  alt=""
+                  class="star"
+                />
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                </p>
+                <h3 onclick="view('product-image/image/image 35.png')">
+                  View details
+                </h3>
+              </div>
+              <img
+                class="heart"
+                onclick="heart(3)"
+                src="product-image/icons/btn-basic.png"
+                alt=""
+              />
+            </div>
+            <div class="products">
+              <img
+                src="product-image/image/image 23.png"
+                class="proImg"
+                alt=""
+              />
+              <div class="productDetails">
+                <h4>Canon Cmera EOS 2000, Black 10x zoom</h4>
+                <h2>
+                  $998.00
+                  <span style="color: #8b96a5; font-size: 16px"
+                    ><del>$1128.00</del></span
+                  >
+                </h2>
+                <img
+                  src="product-image/image/Group 989.png"
+                  alt=""
+                  class="star"
+                />
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                </p>
+                <h3 onclick="view('product-image/image/image 23.png')">
+                  View details
+                </h3>
+              </div>
+              <img
+                class="heart"
+                onclick="heart(4)"
+                src="product-image/icons/btn-basic.png"
+                alt=""
+              />
+            </div>
+            <div class="products">
+              <img
+                src="product-image/image/image 86.png"
+                class="proImg"
+                alt=""
+              />
+              <div class="productDetails">
+                <h4>Canon Cmera EOS 2000, Black 10x zoom</h4>
+                <h2>
+                  $998.00
+                  <span style="color: #8b96a5; font-size: 16px"
+                    ><del>$1128.00</del></span
+                  >
+                </h2>
+                <img
+                  src="product-image/image/Group 989.png"
+                  alt=""
+                  class="star"
+                />
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                </p>
+                <h3 onclick="view('product-image/image/image 86.png')">
+                  View details
+                </h3>
+              </div>
+              <img
+                class="heart"
+                onclick="heart(5)"
+                src="product-image/icons/btn-basic.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="productCart">
+          <div class="product">
+            <img
+              src="product-image/image/image 33.png"
+              alt=""
+              class="itemImg"
+            />
+            <div class="withHert">
+              <div class="productDetail">
+                <h2>
+                  $998.00
+                  <span style="color: #8b96a5; font-size: 16px"
+                    ><del>$1128.00</del></span
+                  >
+                </h2>
+                <img
+                  src="product-image/icons/rating.png"
+                  alt=""
+                  class="stars"
+                />
+                <p>GoPro HERO6 4K Action Camera - Black</p>
+              </div>
+              <img
+                class="heart"
+                onclick="heart(6)"
+                src="product-image/icons/btn-basic.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="product">
+            <img
+              src="product-image/image/image 32.png"
+              class="itemImg"
+              alt=""
+            />
+            <div class="withHert">
+              <div class="productDetail">
+                <h2>
+                  $998.00
+                  <span style="color: #8b96a5; font-size: 16px"
+                    ><del>$1128.00</del></span
+                  >
+                </h2>
+                <img
+                  src="product-image/icons/rating.png"
+                  alt=""
+                  class="stars"
+                />
+                <p>GoPro HERO6 4K Action Camera - Black</p>
+              </div>
+              <img
+                class="heart"
+                onclick="heart(7)"
+                src="product-image/icons/btn-basic.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="product">
+            <img
+              src="product-image/image/image 34.png"
+              class="itemImg"
+              alt=""
+            />
+            <div class="withHert">
+              <div class="productDetail">
+                <h2>
+                  $998.00
+                  <span style="color: #8b96a5; font-size: 16px"
+                    ><del>$1128.00</del></span
+                  >
+                </h2>
+                <img
+                  src="product-image/icons/rating.png"
+                  alt=""
+                  class="stars"
+                />
+                <p>GoPro HERO6 4K Action Camera - Black</p>
+              </div>
+              <img
+                class="heart"
+                onclick="heart(8)"
+                src="product-image/icons/btn-basic.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="product">
+            <img
+              src="product-image/image/image 35.png"
+              class="itemImg"
+              alt=""
+            />
+            <div class="withHert">
+              <div class="productDetail">
+                <h2>
+                  $998.00
+                  <span style="color: #8b96a5; font-size: 16px"
+                    ><del>$1128.00</del></span
+                  >
+                </h2>
+                <img
+                  src="product-image/icons/rating.png"
+                  alt=""
+                  class="stars"
+                />
+                <p>GoPro HERO6 4K Action Camera - Black</p>
+              </div>
+              <img
+                class="heart"
+                onclick="heart(9)"
+                src="product-image/icons/btn-basic.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="product">
+            <img
+              src="product-image/image/image 23.png"
+              class="itemImg"
+              alt=""
+            />
+            <div class="withHert">
+              <div class="productDetail">
+                <h2>
+                  $998.00
+                  <span style="color: #8b96a5; font-size: 16px"
+                    ><del>$1128.00</del></span
+                  >
+                </h2>
+                <img
+                  src="product-image/icons/rating.png"
+                  alt=""
+                  class="stars"
+                />
+                <p>GoPro HERO6 4K Action Camera - Black</p>
+                <p>GoPro HERO6 4K Action Camera - Black</p>
+              </div>
+              <img
+                class="heart"
+                onclick="heart(10)"
+                src="product-image/icons/btn-basic.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="product">
+            <img
+              src="product-image/image/image 86.png"
+              class="itemImg"
+              alt=""
+            />
+            <div class="withHert">
+              <div class="productDetail">
+                <h2>
+                  $998.00
+                  <span style="color: #8b96a5; font-size: 16px"
+                    ><del>$1128.00</del></span
+                  >
+                </h2>
+                <img
+                  src="product-image/icons/rating.png"
+                  alt=""
+                  class="stars"
+                />
+                <p>GoPro HERO6 4K Action Camera - Black</p>
+              </div>
+              <img
+                class="heart"
+                onclick="heart(11)"
+                src="product-image/icons/btn-basic.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="product">
+            <img
+              src="product-image/image/image 35.png"
+              class="itemImg"
+              alt=""
+            />
+            <div class="withHert">
+              <div class="productDetail">
+                <h2>
+                  $998.00
+                  <span style="color: #8b96a5; font-size: 16px"
+                    ><del>$1128.00</del></span
+                  >
+                </h2>
+                <img
+                  src="product-image/icons/rating.png"
+                  alt=""
+                  class="stars"
+                />
+                <p>GoPro HERO6 4K Action Camera - Black</p>
+              </div>
+              <img
+                class="heart"
+                onclick="heart(12)"
+                src="product-image/icons/btn-basic.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="product">
+            <img
+              src="product-image/image/image 23.png"
+              class="itemImg"
+              alt=""
+            />
+            <div class="withHert">
+              <div class="productDetail">
+                <h2>
+                  $998.00
+                  <span style="color: #8b96a5; font-size: 16px"
+                    ><del>$1128.00</del></span
+                  >
+                </h2>
+                <img
+                  src="product-image/icons/rating.png"
+                  alt=""
+                  class="stars"
+                />
+                <p>GoPro HERO6 4K Action Camera - Black</p>
+              </div>
+              <img
+                class="heart"
+                onclick="heart(13)"
+                src="product-image/icons/btn-basic.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="product">
+            <img
+              src="product-image/image/image 86.png"
+              class="itemImg"
+              alt=""
+            />
+            <div class="withHert">
+              <div class="productDetail">
+                <h2>
+                  $998.00
+                  <span style="color: #8b96a5; font-size: 16px"
+                    ><del>$1128.00</del></span
+                  >
+                </h2>
+                <img
+                  src="product-image/icons/rating.png"
+                  alt=""
+                  class="stars"
+                />
+                <p>GoPro HERO6 4K Action Camera - Black</p>
+              </div>
+              <img
+                class="heart"
+                onclick="heart(14)"
+                src="product-image/icons/btn-basic.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="product">
+            <img
+              src="product-image/image/image 34.png"
+              class="itemImg"
+              alt=""
+            />
+            <div class="withHert">
+              <div class="productDetail">
+                <h2>
+                  $998.00
+                  <span style="color: #8b96a5; font-size: 16px"
+                    ><del>$1128.00</del></span
+                  >
+                </h2>
+                <img
+                  src="product-image/icons/rating.png"
+                  alt=""
+                  class="stars"
+                />
+                <p>GoPro HERO6 4K Action Camera - Black</p>
+              </div>
+              <img
+                class="heart"
+                onclick="heart(15)"
+                src="product-image/icons/btn-basic.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="product">
+            <img
+              src="product-image/image/image 33.png"
+              class="itemImg"
+              alt=""
+            />
+            <div class="withHert">
+              <div class="productDetail">
+                <h2>
+                  $998.00
+                  <span style="color: #8b96a5; font-size: 16px"
+                    ><del>$1128.00</del></span
+                  >
+                </h2>
+                <img
+                  src="product-image/icons/rating.png"
+                  alt=""
+                  class="stars"
+                />
+                <p>GoPro HERO6 4K Action Camera - Black</p>
+              </div>
+              <img
+                class="heart"
+                onclick="heart(16)"
+                src="product-image/icons/btn-basic.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="product">
+            <img
+              src="product-image/image/image 32.png"
+              class="itemImg"
+              alt=""
+            />
+            <div class="withHert">
+              <div class="productDetail">
+                <h2>
+                  $998.00
+                  <span style="color: #8b96a5; font-size: 16px"
+                    ><del>$1128.00</del></span
+                  >
+                </h2>
+                <img
+                  src="product-image/icons/rating.png"
+                  alt=""
+                  class="stars"
+                />
+                <p>GoPro HERO6 4K Action Camera - Black</p>
+              </div>
+              <img
+                class="heart"
+                onclick="heart(17)"
+                src="product-image/icons/btn-basic.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
       </div>
-      <ul class="filter-list">
-        <li><input type="radio" name="condition" checked> Any</li>
-        <li><input type="radio" name="condition"> Refurbished</li>
-        <li><input type="radio" name="condition"> Brand new</li>
-        <li><input type="radio" name="condition"> Old items</li>
-      </ul>
+    </div>
+    <div class="holeOrder">
+      <div class="container">
+        <main class="cart-container">
+          <h2 id="cart-header">My cart (0)</h2>
+          <div id="cart-items"></div>
+
+          <div class="cart-actions">
+            <button class="btn-blue">← Back to shop</button>
+            <button class="btn-outline-blue" onclick="clearCart()">
+              Remove all
+            </button>
+          </div>
+        </main>
+
+        <aside class="summary-sidebar">
+          <div class="coupon-card">
+            <p>Have a coupon?</p>
+            <div class="input-group">
+              <input type="text" placeholder="Add coupon" />
+              <button>Apply</button>
+            </div>
+          </div>
+
+          <div class="totals-card">
+            <div class="row">
+              <span>Subtotal:</span> <span id="subtotal">$0.00</span>
+            </div>
+            <div class="row">
+              <span>Discount:</span> <span class="red">-$0.00</span>
+            </div>
+            <div class="row">
+              <span>Tax:</span> <span class="green" id="tax">+$0.00</span>
+            </div>
+            <hr />
+            <div class="row total">
+              <span>Total:</span> <span id="total-price">$0.00</span>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+            <div class="payment-icons">
+              <img src="product-image/icons/payment.png" alt="" />
+              <img src="product-image/icons/payment copy.png" alt="" />
+              <img src="product-image/icons/payment copy 2.png" alt="" />
+              <img src="product-image/icons/payment copy 3.png" alt="" />
+              <img src="product-image/icons/payment copy 4.png" alt="" />
+            </div>
+          </div>
+        </aside>
+      </div>
+      <div class="security">
+        <img src="product-image/image/Group 1006.png" alt="" />
+        <img src="product-image/image/item-feature.png" alt="" />
+        <img src="product-image/image/item-feature (1).png" alt="" />
+      </div>
+      <section class="saved-section">
+        <h3>Saved for later</h3>
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="img-placeholder">
+              <img src="product-image/image/image 23.png" alt="Tablet" />
+            </div>
+            <p class="price">$99.50</p>
+            <p class="name">GoPro HERO6 4K Action Camera - Black</p>
+            <button
+              onclick="
+                addToCart(
+                  1,
+                  'GoPro HERO6 4K Camera',
+                  99.5,
+                  'product-image/image/image 23.png',
+                )
+              "
+            >
+              🛒 Move to cart
+            </button>
+          </div>
+          <div class="product-card">
+            <div class="img-placeholder">
+              <img src="product-image/image/image 32.png" alt="Phone" />
+            </div>
+            <p class="price">$99.50</p>
+            <p class="name">GoPro HERO6 4K Action Camera - Black</p>
+            <button
+              onclick="
+                addToCart(
+                  2,
+                  'iPhone 12 Pro Max',
+                  99.5,
+                  'product-image/image/image 32.png',
+                )
+              "
+            >
+              🛒 Move to cart
+            </button>
+          </div>
+          <div class="product-card">
+            <div class="img-placeholder">
+              <img src="product-image/image/image 33.png" alt="Tablet" />
+            </div>
+            <p class="price">$99.50</p>
+            <p class="name">GoPro HERO6 4K Action Camera - Red</p>
+            <button
+              onclick="
+                addToCart(
+                  3,
+                  'GoPro HERO6 4K Camera',
+                  99.5,
+                  'product-image/image/image 33.png',
+                )
+              "
+            >
+              🛒 Move to cart
+            </button>
+          </div>
+          <div class="product-card">
+            <div class="img-placeholder">
+              <img src="product-image/image/image 86.png" alt="Phone" />
+            </div>
+            <p class="price">$99.50</p>
+            <p class="name">Headphone With fresh condition - white</p>
+            <button
+              onclick="
+                addToCart(
+                  4,
+                  'Headphone With fresh condition',
+                  99.5,
+                  'product-image/image/image 86.png',
+                )
+              "
+            >
+              🛒 Move to cart
+            </button>
+          </div>
+        </div>
+      </section>
+      <div class="shop">
+        <img src="product-image/image/Banner.png" alt="" />
+      </div>
+    </div>
+    <div class="page">
+      <img src="product-image/icons/selectbox-done.png" alt="" />
+      <img src="product-image/icons/Group 273.png" alt="" />
     </div>
     <div>
-        <h4>Ratings</h4>
-        <img src="product-image/image/Group 997.png" alt="">
-    </div>
+      
+      <div class="view">
+        <nav class="dressnav">
+          <div onclick="home()">Home</div>
+          <div>&GreaterGreater;</div>
+          <div>Clothings</div>
+          <div>&GreaterGreater;</div>
+          <div>Men’s wear</div>
+          <div>&GreaterGreater;</div>
+          <div>Summer clothing</div>
+        </nav>
+        <div class="product-container">
+          <div class="gallery">
+            <div class="main-image">
+              <img
+                src="product-image/image/image 34 copy.png"
+                alt=""
+                id="imageDetail"
+              />
+            </div>
+            <div class="thumbnails">
+              <img src="product-image/image/Gallery (17).png" alt="" />
+            </div>
+          </div>
 
-  </div>
- 
-<div class="proNav">
-    <nav >
-        <p>12,911 items in Mobile accessory</p>
-        <div class="input">
-            <div><input type="checkbox"><span>Verified only</span></div>
-            <select name="" id=""><option value="">Featured</option></select>
-            <img src="product-image/image/btn-group.png" alt="">
+          <div class="details">
+            <p class="stock-status">✓ In stock</p>
+            <h1>Mens Long Sleeve T-shirt Cotton Base Layer Slim Muscle</h1>
+
+            <div class="rating">
+              <span class="stars">★★★★☆</span>
+              <span class="score">9.3</span> • 32 reviews • 154 sold
+            </div>
+
+            <div class="price-table">
+              <div class="price-box highlight">
+                <p class="price">$98.00</p>
+                <p class="moq">50-100 pcs</p>
+              </div>
+              <div class="price-box">
+                <p class="price">$90.00</p>
+                <p class="moq">100-700 pcs</p>
+              </div>
+              <div class="price-box">
+                <p class="price">$78.00</p>
+                <p class="moq">700+ pcs</p>
+              </div>
+            </div>
+
+            <table class="specs">
+              <tr>
+                <td>Price:</td>
+                <td>Negotiable</td>
+              </tr>
+              <tr>
+                <td>Type:</td>
+                <td>Classic shoes</td>
+              </tr>
+              <tr>
+                <td>Material:</td>
+                <td>Plastic material</td>
+              </tr>
+              <tr>
+                <td>Design:</td>
+                <td>Modern nice</td>
+              </tr>
+            </table>
+
+            <hr />
+
+            <table class="specs">
+              <tr>
+                <td>Customization:</td>
+                <td>Customized logo and design custom packages</td>
+              </tr>
+              <tr>
+                <td>Protection:</td>
+                <td>Refund Policy</td>
+              </tr>
+              <tr>
+                <td>Warranty:</td>
+                <td>2 years full warranty</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="sidebar">
+            <div class="supplier-card">
+              <div class="supplier-header">
+                <div class="avatar">R</div>
+                <div>
+                  <p class="label">Supplier</p>
+                  <p class="name">Guanjoi Trading LLC</p>
+                </div>
+              </div>
+              <ul class="supplier-info">
+                <li>🇩🇪 Germany, Berlin</li>
+                <li>🛡️ Verified Seller</li>
+                <li>🌐 Worldwide shipping</li>
+              </ul>
+              <button class="btn-primary">Send inquiry</button>
+              <button class="btn-secondary">Seller's profile</button>
+            </div>
+            <button class="btn-text">♡ Save for later</button>
+          </div>
         </div>
-    </nav>
-    <div class="productCard">
-        <div class="products">
-            <img src="product-image/image/image 33.png" alt="" class="proImg">
-            <div class="productDetails">
-                <h4>Canon Cmera EOS 2000, Black 10x zoom</h4>
-                <h2>$998.00 <span style="color: #8B96A5; font-size: 16px;"><del>$1128.00</del></span></h2>
-                <img src="product-image/image/Group 989.png" alt="" class="star">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua</p>
-                 <a href="">View details</a>
-            
+        <div class="page-container">
+          <main class="main-content">
+            <nav class="tabs">
+              <a href="#" class="active">Description</a>
+              <a href="#">Reviews</a>
+              <a href="#">Shipping</a>
+              <a href="#">About seller</a>
+            </nav>
+
+            <div class="content-body">
+              <p class="description-text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Lorem ipsum dolor sit amet, consectetur
+                adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, <br />
+                Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat. Duis aute irure dolor in reprehenderit in
+                voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              </p>
+
+              <table class="specs-table">
+                <tr>
+                  <td>Model</td>
+                  <td>#8786867</td>
+                </tr>
+                <tr>
+                  <td>Style</td>
+                  <td>Classic style</td>
+                </tr>
+                <tr>
+                  <td>Certificate</td>
+                  <td>ISO-898921212</td>
+                </tr>
+                <tr>
+                  <td>Size</td>
+                  <td>34mm x 450mm x 19mm</td>
+                </tr>
+                <tr>
+                  <td>Memory</td>
+                  <td>36GB RAM</td>
+                </tr>
+              </table>
+
+              <ul class="features-list">
+                <li>Some great feature name here</li>
+                <li>Lorem ipsum dolor sit amet, consectetur</li>
+                <li>Duis aute irure dolor in reprehenderit</li>
+                <li>Some great feature name here</li>
+              </ul>
             </div>
-            <img class="heart" src="product-image/icons/btn-basic.png" alt="">
-        </div><div class="products">
-            <img src="product-image/image/image 32.png" class="proImg" alt="">
-            <div class="productDetails">
-                <h4>Canon Cmera EOS 2000, Black 10x zoom</h4>
-                <h2>$998.00 <span style="color: #8B96A5; font-size: 16px;"><del>$1128.00</del></span></h2>
-                <img src="product-image/image/Group 989.png" alt="" class="star">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua</p>
-                 <a href="">View details</a>
-            
+          </main>
+
+          <aside class="sidebar">
+            <h3>You may like</h3>
+            <div class="recommendations">
+              <div class="item">
+                <div class="img-box">
+                  <img src="image/Dress/image 26.png" alt="Blazer" />
+                </div>
+                <div class="item-info">
+                  <p class="item-title">Men Blazers Sets Elegant Formal</p>
+                  <p class="item-price">$7.00 - $99.50</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="img-box">
+                  <img src="image/Dress/image 30.png" alt="Polo" />
+                </div>
+                <div class="item-info">
+                  <p class="item-title">Men Shirt Sleeve Polo Contrast</p>
+                  <p class="item-price">$7.00 - $99.50</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="img-box">
+                  <img src="image/Dress/image 24.png" alt="Watch" />
+                </div>
+                <div class="item-info">
+                  <p class="item-title">Apple Watch Series Space Gray</p>
+                  <p class="item-price">$7.00 - $99.50</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="img-box">
+                  <img src="image/Dress/image 86.png" alt="Polo" />
+                </div>
+                <div class="item-info">
+                  <p class="item-title">Men Shirt Sleeve Polo Contrast</p>
+                  <p class="item-price">$7.00 - $99.50</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="img-box">
+                  <img src="image/Dress/image 90.png" alt="Watch" />
+                </div>
+                <div class="item-info">
+                  <p class="item-title">Apple Watch Series Space Gray</p>
+                  <p class="item-price">$7.00 - $99.50</p>
+                </div>
+              </div>
             </div>
-            <img class="heart" src="product-image/icons/btn-basic.png" alt="">
-        </div><div class="products">
-            <img src="product-image/image/image 34.png" class="proImg" alt="">
-            <div class="productDetails">
-                <h4>Canon Cmera EOS 2000, Black 10x zoom</h4>
-                <h2>$998.00 <span style="color: #8B96A5; font-size: 16px;"><del>$1128.00</del></span></h2>
-                <img src="product-image/image/Group 989.png" alt="" class="star">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua</p>
-                 <a href="">View details</a>
-            
-            </div>
-            <img class="heart" src="product-image/icons/btn-basic.png" alt="">
-        </div><div class="products">
-            <img src="product-image/image/image 35.png" class="proImg" alt="">
-            <div class="productDetails">
-                <h4>Canon Cmera EOS 2000, Black 10x zoom</h4>
-                <h2>$998.00 <span style="color: #8B96A5; font-size: 16px;"><del>$1128.00</del></span></h2>
-                <img src="product-image/image/Group 989.png" alt="" class="star">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua</p>
-                 <a href="">View details</a>
-            
-            </div>
-            <img class="heart" src="product-image/icons/btn-basic.png" alt="">
-        </div><div class="products">
-            <img src="product-image/image/image 23.png" class="proImg" alt="">
-            <div class="productDetails">
-                <h4>Canon Cmera EOS 2000, Black 10x zoom</h4>
-                <h2>$998.00 <span style="color: #8B96A5; font-size: 16px;"><del>$1128.00</del></span></h2>
-                <img src="product-image/image/Group 989.png" alt="" class="star">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua</p>
-                 <a href="">View details</a>
-            
-            </div>
-            <img class="heart" src="product-image/icons/btn-basic.png" alt="">
-        </div><div class="products">
-            <img src="product-image/image/image 86.png" class="proImg" alt="">
-            <div class="productDetails">
-                <h4>Canon Cmera EOS 2000, Black 10x zoom</h4>
-                <h2>$998.00 <span style="color: #8B96A5; font-size: 16px;"><del>$1128.00</del></span></h2>
-                <img src="product-image/image/Group 989.png" alt="" class="star">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua</p>
-                 <a href="">View details</a>
-            
-            </div>
-            <img class="heart" src="product-image/icons/btn-basic.png" alt="">
+          </aside>
         </div>
+        <div class="realated">
+          <div class="rel-item">
+            <div><img src="image/Dress/image 24.png" alt="" /></div>
+            <p>Xiaomi Redmi 8 Original</p>
+            <p>$32.00-$40.00</p>
+          </div>
+          <div class="rel-item">
+            <div><img src="image/Dress/image 26.png" alt="" /></div>
+            <p>Xiaomi Redmi 8 Original</p>
+            <p>$32.00-$40.00</p>
+          </div>
+          <div class="rel-item">
+            <div><img src="image/Dress/image 30.png" alt="" /></div>
+            <p>Xiaomi Redmi 8 Original</p>
+            <p>$32.00-$40.00</p>
+          </div>
+          <div class="rel-item">
+            <div><img src="image/Dress/image 85.png" alt="" /></div>
+            <p>Xiaomi Redmi 8 Original</p>
+            <p>$32.00-$40.00</p>
+          </div>
+          <div class="rel-item">
+            <div><img src="image/Dress/image 90.png" alt="" /></div>
+            <p>Xiaomi Redmi 8 Original</p>
+            <p>$32.00-$40.00</p>
+          </div>
+          <div class="rel-item">
+            <div><img src="image/Dress/image 86.png" alt="" /></div>
+            <p>Xiaomi Redmi 8 Original</p>
+            <p>$32.00-$40.00</p>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
-</div>  
-<div class="page">
-    <img src="product-image/icons/selectbox-done.png" alt="">
-    <img src="product-image/icons/Group 273.png" alt="">
-</div>
-  <footer>
+    <footer>
       <div class="socail">
         <img src="icons/logo-colored.png" alt="" />
         <p>
@@ -263,4 +1152,43 @@ tempor incididunt ut labore et dolore magna aliqua</p>
       </div>
     </div>
   </body>
+  <script>
+    function show1() {
+      document.getElementsByClassName("productCard")[0].style.display = "none";
+      document.getElementsByClassName("productCart")[0].style.display = "flex";
+    }
+    function show2() {
+      document.getElementsByClassName("productCard")[0].style.display = "flex";
+      document.getElementsByClassName("productCart")[0].style.display = "none";
+    }
+    function order() {
+      document.getElementsByClassName("holeOrder")[0].style.display = "flex";
+      document.getElementsByClassName('view')[0].style.display = "none";
+      document.getElementsByClassName("ProductWithName")[0].style.display =
+        "none";
+    }
+    function view(url) {
+      document.getElementsByClassName("view")[0].style.display = "flex";
+      document.getElementsByClassName("proNav")[0].style.display = "none";
+      document.getElementsByClassName("holeOrder")[0].style.display = "none";
+      document.getElementsByClassName("page")[0].style.display = "none";
+      document.getElementsByClassName("ProductWithName")[0].style.display =
+        "none";
+      document.getElementById("imageDetail").setAttribute("src", url);
+    }
+
+    function home() {
+      document.getElementsByClassName("view")[0].style.display = "none";
+      document.getElementsByClassName("proNav")[0].style.display = "flex";
+      document.getElementsByClassName("holeOrder")[0].style.display = "flex";
+      document.getElementsByClassName("page")[0].style.display = "flex";
+      document.getElementsByClassName("ProductWithName")[0].style.display =
+        "flex";
+    }
+
+    function heart(index) {
+      document.getElementsByClassName("heart")[index].style.backgroundColor =
+        "red";
+    }
+  </script>
 </html>

@@ -442,3 +442,106 @@ footer {
   background-color: rgb(240, 243, 245);
   font-size: 18px;
 }
+
+
+/* Animition */
+.ul li a{
+  position: relative;
+  transition: 0.3s;
+}
+
+.ul li a::after{
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: blue;
+  transition: 0.3s;
+}
+
+.ul li a:hover::after{
+  width: 100%;
+}.header-icons img{
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.header-icons img:hover{
+  transform: scale(1.2) rotate(5deg);
+}.between button{
+  transition: 0.3s;
+}
+
+.between button:hover{
+  background-color: blue;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0px 5px 15px rgba(0,0,255,0.4);
+}.box{
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.box:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}.homeBox{
+  transition: 0.3s ease;
+}
+
+.homeBox:hover{
+  transform: scale(1.05);
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+}.dress{
+  transition: 0.3s;
+}
+
+.dress:hover{
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.15);
+}.country{
+  transition: 0.3s;
+}
+
+.country:hover{
+  background: #f1f3f5;
+  padding-left: 5px;
+}form input:focus,
+textarea:focus{
+  outline: none;
+  border: 1px solid blue;
+  box-shadow: 0 0 5px rgba(0,0,255,0.3);
+}#submit{
+  transition: 0.3s;
+}
+
+#submit:hover{
+  background: darkblue;
+  transform: scale(1.05);
+}.hero,
+.digitalProduct,
+.home,
+.dressCard{
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp{
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}.box img,
+.homeBox img,
+.dress img{
+  transition: 0.4s;
+}
+
+.box:hover img,
+.homeBox:hover img,
+.dress:hover img{
+  transform: scale(1.1);
+}

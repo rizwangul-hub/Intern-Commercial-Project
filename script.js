@@ -71,3 +71,7 @@ function updateUI() {
     cartCountNav.innerText = cart.length;
     cartHeader.innerText = `My cart (${cart.length})`;
 }
+let Image=document.getElementsByClassName('main-image')[0];
+function details(url){
+    Image.setAttribute("src", url);
+}
